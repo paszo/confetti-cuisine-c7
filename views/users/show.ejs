@@ -1,0 +1,20 @@
+<h1>User data for <%= user.fullName %></h1>
+<table>
+    <tr>
+        <th>Name</th>
+        <td><%= user.fullName %></td>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <td><%= user.email %></td>
+    </tr>
+    <tr>
+        <th>Zip Code</th>
+        <td><%= user.zipCode %></td>
+    </tr>
+        <tr>
+        <th>API Token</th>
+        <td><%= user.apiToken %></td>
+    </tr>
+</table>
+<p>This user has <%= user.courses.length %> associated course(s) </p>

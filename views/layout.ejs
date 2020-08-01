@@ -1,0 +1,41 @@
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1" />
+    <title>Confetti Cuisine</title>
+<!--    <link rel="stylesheet" href="/css/bootstrap.css" />-->
+        <link rel="stylesheet" href="/css/confetti_cuisine.css" />
+<!--    <script type="text/javascript" src="/js/jquery.min.js"></script>-->
+<!--    <script type="text/javascript" src="/js/bootstrap.min.js"></script>-->
+    <script type="text/javascript" src="/js/confettiCuisine.js" defer></script>
+</head>
+<% if (loggedIn) { %>
+    Logged in as <a href="<%= `/users/${currentUser._id}`%>">
+        <%= currentUser.fullName %>
+        <div id="apiToken" data-token="<%= currentUser.apiToken %>" style="display: none;"></div>
+    </a>
+<a href="/users/logout">Logout</a>
+<% } else {%>
+    <a href="/users/login">Log In</a>
+<% } %>
+<div>
+    <li>
+        <%- include('courses/_coursesModal'); %>
+    </li>
+    <a href="/">Home</a>
+    <a href="/courses">Courses</a>
+    <a href="/subscribers/new">Contact</a>
+    <a href="/subscribers">Subscribers</a>
+    <a href="/users">Users</a>
+    <a href="/users/login">Login</a>
+</div>
+<div class="flashes">
+    <% if (flashMessages)  { %>
+        <% if (flashMessages.success) { %>
+            <div class="flash success"><%= flashMessages.success %></div>
+        <% } else if (flashMessages.error) { %>
+            <div class="flash error"><%= flashMessages.error %></div>
+        <% } %>
+    <% } %>
+</div>
+<%- body %>
+<p>footer</p>
