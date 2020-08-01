@@ -4,9 +4,11 @@
     <title>Confetti Cuisine</title>
 <!--    <link rel="stylesheet" href="/css/bootstrap.css" />-->
         <link rel="stylesheet" href="/css/confetti_cuisine.css" />
-<!--    <script type="text/javascript" src="/js/jquery.min.js"></script>-->
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
 <!--    <script type="text/javascript" src="/js/bootstrap.min.js"></script>-->
     <script type="text/javascript" src="/js/confettiCuisine.js" defer></script>
+        <script type="text/javascript" src="/js/recipeApp.js" defer></script>
+    <script src="/socket.io/socket.io.js"></script>
 </head>
 <% if (loggedIn) { %>
     Logged in as <a href="<%= `/users/${currentUser._id}`%>">
@@ -22,6 +24,7 @@
         <%- include('courses/_coursesModal'); %>
     </li>
     <a href="/">Home</a>
+    <a href="/chat">Chat</a>
     <a href="/courses">Courses</a>
     <a href="/subscribers/new">Contact</a>
     <a href="/subscribers">Subscribers</a>
