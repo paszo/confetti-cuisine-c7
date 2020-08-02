@@ -63,3 +63,7 @@ a {
 #myModal {
   display: none;
 }
+
+.current-user {
+  font-weight: bold;
+}
