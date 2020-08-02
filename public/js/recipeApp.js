@@ -15,8 +15,18 @@ $("#chatForm").submit(() => {
     return false;
 });
 
+socket.on("user disconnected", () => {
+    displayMessage({
+        userName: "Notice",
+        content: "User left the chat"
+    });
+});
+
 socket.on("message", (message) => {
     displayMessage(message);
+    for (let i = 0; i < 2; i++) {
+        $(".chat-icon").fadeOut(200).fadeIn(200);
+    }
 });
 
 socket.on("load all messages", (data) => {
